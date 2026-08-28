@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechBlog — Programação Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       #topo — barra de navegação
+       ID: único na página
+  ============================================================ -->
+  <div id="topo">
+
+    <div class="logo">Tech<span>Blog</span></div>
+
+    <div id="navegacao">
+      <a href="#">HTML</a>
+      <a href="#">CSS</a>
+      <a href="#">JavaScript</a>
+      <a href="#">Projetos</a>
+      <a href="#" class="btn-assinar">Assinar</a>
+    </div>
+
+  </div>
+
+
+  <!-- ============================================================
+       #hero — seção de destaque
+       ID: único na página
+  ============================================================ -->
+  <div id="hero">
+
+    <div class="hero-texto">
+      <div class="categoria">Artigo em destaque</div>
+      <h1>Como o CSS transforma um HTML simples em algo incrível</h1>
+      <p class="resumo">
+        Entenda como as propriedades de estilo funcionam na prática — de cores e fontes
+        até layouts complexos com div, id e class.
+      </p>
+      <a href="#" class="btn-ler">Ler artigo →</a>
+    </div>
+
+    <div class="hero-imagem">CSS</div>
+
+  </div>
+
+
+  <!-- ============================================================
+        #wrapper-principal — área de conteúdo + sidebar
+        ID: único na página
+  ============================================================ -->
+  <div id="wrapper-principal">
+
+
+    <!-- ============================================================
+          #coluna-artigos — lista de posts
+          ID: único na página
+          Contém múltiplos .card-artigo (class reutilizável)
+    ============================================================ -->
+    <div id="coluna-artigos">
+
+      <div class="secao-titulo"><span>Últimos</span> artigos</div>
+
+      <!-- card 1: duas classes — card-artigo + html -->
+      <div class="card-artigo html">
+        <div class="card-imagem">🏗️</div>
+        <div class="card-corpo">
+          <span class="card-tag">HTML</span>
+          <h2>Estruturando páginas com div, id e class do jeito certo</h2>
+          <p class="card-resumo">
+            Aprenda quando usar cada um e como eles trabalham juntos para criar
+            layouts organizados, legíveis e fáceis de manter.
+          </p>
+          <div class="card-meta">
+            <div class="autor">
+              <div class="avatar laranja">AN</div>
+              Ana Costa
+            </div>
+            <span>12 mar 2025 · 6 min</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 2: duas classes — card-artigo + css -->
+      <div class="card-artigo css">
+        <div class="card-imagem">🎨</div>
+        <div class="card-corpo">
+          <span class="card-tag">CSS</span>
+          <h2>Seletores CSS: de básicos a avançados em exemplos reais</h2>
+          <p class="card-resumo">
+            Do seletor de tag ao descendente, passando por pseudo-classes —
+            guia visual e prático para dominar a especificidade do CSS.
+          </p>
+          <div class="card-meta">
+            <div class="autor">
+              <div class="avatar azul">BR</div>
+              Bruno Reis
+            </div>
+            <span>8 mar 2025 · 9 min</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 3: duas classes — card-artigo + js -->
+      <div class="card-artigo js">
+        <div class="card-imagem">⚙️</div>
+        <div class="card-corpo">
+          <span class="card-tag">JavaScript</span>
+          <h2>Manipulando o DOM: como o JS enxerga seu HTML</h2>
+          <p class="card-resumo">
+            O Document Object Model é a ponte entre seu código e a página.
+            Veja como acessar elementos pelo id, class e tag diretamente.
+          </p>
+          <div class="card-meta">
+            <div class="autor">
+              <div class="avatar verde">CL</div>
+              Carlos Lima
+            </div>
+            <span>3 mar 2025 · 7 min</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 4: três classes — card-artigo + html + avancado -->
+      <div class="card-artigo html avancado">
+        <div class="card-imagem">🚀</div>
+        <div class="card-corpo">
+          <span class="card-tag">HTML · Avançado</span>
+          <h2>Tags semânticas: quando parar de usar &lt;div&gt; para tudo</h2>
+          <p class="card-resumo">
+            header, nav, main, section, article e footer — entenda o papel
+            de cada tag semântica e como tornam seu código mais profissional.
+          </p>
+          <div class="card-meta">
+            <div class="autor">
+              <div class="avatar vermelho">MF</div>
+              Mariana Faria
+            </div>
+            <span>28 fev 2025 · 8 min</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- fim #coluna-artigos -->
+
+
+    <!-- ============================================================
+         #sidebar — coluna lateral
+         ID: único na página
+         Contém múltiplos .widget (class reutilizável)
+    ============================================================ -->
+    <div id="sidebar">
+
+      <!-- widget 1: duas classes — widget + newsletter -->
+      <div class="widget newsletter">
+        <div class="widget-titulo">📬 Newsletter</div>
+        <div class="widget-corpo">
+          <p>Receba os melhores artigos sobre desenvolvimento web toda semana.</p>
+          <input type="email" class="campo-email" placeholder="seu@email.com">
+          <button class="btn-newsletter">Quero receber</button>
+        </div>
+      </div>
+
+      <!-- widget 2: uma classe — widget -->
+      <div class="widget">
+        <div class="widget-titulo">📁 Categorias</div>
+        <div class="widget-corpo">
+          <ul class="lista-categorias">
+            <li><a href="#">HTML Básico <span class="contagem">12</span></a></li>
+            <li><a href="#">CSS Essencial <span class="contagem">18</span></a></li>
+            <li><a href="#">JavaScript <span class="contagem">9</span></a></li>
+            <li><a href="#">Projetos Práticos <span class="contagem">7</span></a></li>
+            <li><a href="#">Dicas e Truques <span class="contagem">15</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- widget 3: uma classe — widget -->
+      <div class="widget">
+        <div class="widget-titulo">🏷️ Tags populares</div>
+        <div class="widget-corpo">
+          <div class="nuvem-tags">
+            <span class="tag-item">#html</span>
+            <span class="tag-item">#css</span>
+            <span class="tag-item">#div</span>
+            <span class="tag-item">#id</span>
+            <span class="tag-item">#class</span>
+            <span class="tag-item">#layout</span>
+            <span class="tag-item">#seletores</span>
+            <span class="tag-item">#flexbox</span>
+            <span class="tag-item">#frontend</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- widget 4: duas classes — widget + destaque-lateral -->
+      <div class="widget destaque-lateral">
+        <div class="widget-titulo">⭐ Mais lido</div>
+        <div class="widget-corpo">
+          <div class="post-destaque">
+            <div class="post-thumb">📌</div>
+            <h3>Guia completo de Flexbox para iniciantes</h3>
+            <p>Do display:flex ao align-items — tudo que você precisa saber.</p>
+            <a href="#" class="btn-ver">Ler artigo →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- fim #sidebar -->
+
+
+  </div>
+  <!-- fim #wrapper-principal -->
+
+
+  <!-- ============================================================
+       #faixa-numeros — seção de estatísticas
+       ID: único na página
+  ============================================================ -->
+  <div id="faixa-numeros">
+    <div class="numeros-grid">
+
+      <div class="numero-item">
+        <div class="numero">48</div>
+        <div class="numero-label">Artigos publicados</div>
+      </div>
+
+      <div class="numero-item">
+        <div class="numero">3.2k</div>
+        <div class="numero-label">Leitores mensais</div>
+      </div>
+
+      <div class="numero-item">
+        <div class="numero">12</div>
+        <div class="numero-label">Projetos práticos</div>
+      </div>
+
+      <div class="numero-item">
+        <div class="numero">100%</div>
+        <div class="numero-label">Conteúdo gratuito</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       #rodape — rodapé completo
+       ID: único na página
+  ============================================================ -->
+  <div id="rodape">
+
+    <div class="rodape-grid">
+
+      <div class="rodape-col-logo">
+        <div class="logo-rodape">Tech<span>Blog</span></div>
+        <p>Conteúdo de qualidade sobre desenvolvimento web para iniciantes e intermediários. HTML, CSS e JavaScript do zero.</p>
+      </div>
+
+      <div class="rodape-col">
+        <h4>Conteúdo</h4>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">Projetos</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape-col">
+        <h4>Blog</h4>
+        <ul>
+          <li><a href="#">Últimos artigos</a></li>
+          <li><a href="#">Mais lidos</a></li>
+          <li><a href="#">Séries</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape-col">
+        <h4>Sobre</h4>
+        <ul>
+          <li><a href="#">Quem somos</a></li>
+          <li><a href="#">Escreva para nós</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Privacidade</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- #rodape-base — ID dentro de #rodape -->
+    <div id="rodape-base">
+      <span class="copyright">© <span id="ano-atual">2025</span> TechBlog — Feito com HTML, CSS e muito café ☕</span>
+      <div class="redes">
+        <a href="#">GitHub</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- fim #rodape -->
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('#ano-atual').textContent = new Date().getFullYear()
+    });
+  </script>
+</body>
+</html>

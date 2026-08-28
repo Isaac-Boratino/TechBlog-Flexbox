@@ -1,0 +1,766 @@
+/* IMPORTAÇÃO DE FONTES */
+
+/* VARIÁVEIS GLOBAIS*/
+:root{
+    --cor-fundo:         #f8f7f4;
+    --cor-superficie:    #ffffff;
+    --cor-topo:          #16213e;
+    --cor-acento:        #e63946;
+    --cor-acento-esc:    #c1121f;
+    --cor-texto:         #1c1c1e;
+    --cor-texto-suave:   #6e6d72;
+    --cor-borda:         #e8e6e0;
+    --cor-html:          #ff6b35;
+    --cor-css:           #2563eb;
+    --cor-js:            #d97706;
+    --fonte-display:     Georgia, serif;
+    --fonte-corpo:       system-ui, sans-serif;
+    --fonte-mono:        'Corier New', monospace;
+    --raio:              10px;
+    --transicao:         0.22s ease;
+}
+
+/* RESET */
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body{
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.65;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+/* #topo- barra de navegação fixa no topo*/
+#topo{
+    position: sticky;
+    background-color:  var(--cor-topo);
+    height: 62px;
+    padding: 0 5vw;
+    border-bottom: 3px solid var(--cor-acento) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* logo dentro do topo*/
+.logo{
+    font-family: var(--fonte-display);
+    font-size:1.35rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+}
+
+/*o <span> dentro de .logo*/
+.logo span{
+    color: var(--cor-acento);
+}
+
+/* #navegaçao - menu de links dentro do corpo*/
+#navegacao{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem
+}
+
+#navegacao a{
+    font-family: var(--fonte-corpo);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color:#aab4c8;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+    transition: all var(--transicao);
+}
+
+#navegacao a:hover{
+    color: #fff;
+    background-color: rgba(255,255,255,0.08);
+}
+
+/*.btn-assinar - classe especial dentro de navegacao */
+#navegacao a.btn-assinar{
+    background-color: var(--cor-acento);
+    color: #ffffff;
+    padding: 0.42rem 1.1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    transition:all var(--transicao);
+}
+
+#navegacao a.btn-assinar:hover{
+
+    background-color: var(--cor-acento-esc);
+    transform: translateY(-1px);
+}
+
+/* #hero - seção de destaque principal*/
+#hero{
+    background-color: var(--cor-topo);
+    padding: 4.5rem 5vw;
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+    min-height: 380px;
+}
+
+/*.hero-texto - coluna de texto do hero*/
+.hero-texto{
+    flex : 1;
+    min-width: 0;
+
+}
+
+/* .categoria */
+.categoria{
+    font-family:var(--fonte-mono) ;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--cor-acento);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap:0.7rem;
+}
+
+.categoria::before{
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background-color: var(--cor-acento);
+}
+
+/* h1 dentro de #hero */
+#hero h1{
+    font-family: var(--fonte-display);
+    font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025rem;
+    color: #ffffff;
+    margin-bottom: 1.1rem;
+}
+
+/* .resumo - parágrafo de descrição no hero */
+.resumo{
+    font-size: 0.97rem;
+    color: #8896b0;
+    line-height: 1.8;
+    max-width: 480px;
+    margin-bottom: 2rem;
+}
+
+/* .btn-ler - botão de ação de hero */
+.btn-ler{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--cor-acento);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.72rem 1.6rem;
+    border-radius: 8px;
+    letter-spacing: 0.01em;
+    transform: all var(--transicao);
+}
+
+.btn-ler:hover{
+    background-color: var(--cor-acento-esc);
+}
+
+/* .hero-imagem - elemento visual decorativo do hero */
+.hero-imagem{
+    flex: 0 0 380px;
+    height: 260px;
+    border-radius: var(--raio);
+    background: linear-gradient(135deg, #1a2a5e 0%, #0f3460 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonte-display);
+    font-size: 5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: rgba(255,255,255,0.06);
+    letter-spacing: -0.04;
+    border: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+    user-select:none;
+}
+
+.hero-imagem::after{
+    content: '</>';
+    position:absolute;
+    font-family: var(--fonte-mono);
+    font-size: 4.5rem;
+    color :rgba(230,57,70,0.18);
+    font-style: normal;
+}
+
+/* #wrapper-principal - grid de duas colunas */
+#wrapper-principal{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 3rem 5vw;
+    display: flex;
+    gap: 2.8rem;
+    align-items: flex-start;
+}
+
+/* #coluna-artigos - lista de posts */
+#coluna-artigos{
+    flex: 1;
+    min-width: 0;
+}
+
+/* .seçao-titulo - cabeçario de seção */
+.secao-titulo{
+    font-family: var(--fonte-corpo);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 1.6rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 0.8rem;
+    border-bottom: 2px solid var(--cor-texto);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.secao-titulo span{
+    color: var(--cor-texto)
+}
+
+/* .card-artigo - card reutilizável de post */
+.card-artigo{
+    background-color: var(--cor-superficie);
+    border-radius: var(--raio);
+    border: 1px solid var(--cor-borda);
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+}
+
+/* .card-imagem - thumbnail do card */
+.card-imagem{
+    flex: 0 0 185px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    min-height: 170px;
+    background: linear-gradient(145deg, #1c2e50, #1a2a5e);
+    position: relative;
+    overflow: hidden;
+}
+
+/* .card-corpo - parte textual do card */
+.card-corpo{
+    flex: 1;
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+}
+
+/* .card-tag - etiqueta de categoria do card */
+.card-tag{
+    font-family: var(--fonte-mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.22rem 0.65rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    width: fit-content;
+}
+
+/* h2 dentro de card-corpo */
+.card-corpo h2{
+    font-family: var(--fonte-display);
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--cor-texto);
+    margin-bottom: 0.55rem;
+    transition: all var(--transicao);
+}
+
+.card-artigo:hover .card-corpo h2{
+    color:var(--cor-acento)
+}
+
+/* .card-resumo - texto do card */
+.card-resumo{
+    font-size: 0.86rem;
+    color: var(--cor-texto-suave);
+    line-height: 1.7;
+    margin-bottom: 1.1rem;
+    flex: 1;
+}
+
+/* .card-meta - rodaé do card com autor e data */
+.card-meta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--cor-texto-suave);
+}
+
+/* .autor - grupo de avatar + nome */
+.autor{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #444;
+}
+
+/* .avatar - círculo de iniciais */
+.avatar{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* variações de caor do .avatar- classes utilitárias */
+.avatar.vermelho{ background-color: var(--cor-acento);}
+.avatar.azul{ background-color: var(--cor-css);}
+.avatar.verde{ background-color: #16a34a;}
+.avatar.laranja{ background-color: var(--cor-html);}
+
+/* Variaçãoes de .card-artigo por categoria */
+/* .card-artigo.html - cards de HTML */
+.card-artigo.html .card-tag{
+    background-color: #fff3ea;
+    color: #b84c10;
+}
+
+.card-artigo.html .card-imagem{
+    background: linear-gradient(145deg, #b84c10, var(--cor-html));
+}
+
+/* .card-artigo.css - cards de CSS */
+.card-artigo.css .card-tag{
+    background-color: #effeff;
+    color: #1d4ed8;
+}
+
+.card-artigo.css .card-imagem{
+    background: linear-gradient(145deg, #1d4ed8, #3b82f6);
+}
+
+/* .card-artigo.js - cards de JavaScript */
+.card-artigo.js .card-tag{
+    background-color: #fefce8;
+    color: #92400e;
+}
+
+.card-artigo.js .card-imagem{
+    background: linear-gradient(145deg, #92400e, var(--cor-js));
+}
+
+/* .card-artigo.avancado - destaque especial com borda lateral */
+.card-artigo.avancado{
+    border-left: 4px solid var(--cor-acento);
+}
+
+/* sidebar - coluna lateral */
+#sidebar{
+    flex: 0 0 290px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* widget - bloco reutilizável da sidebar */
+.widget{
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    overflow: hidden;
+}
+
+/* .widget-titulo */
+.widget .widget-titulo{
+    background-color: var(--cor-topo);
+    color: #fff;
+    font-family: var(--fonte-corpo);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 0.75rem 1.2rem;
+}
+
+/* .widget-corpo - área de conteúdo do widget */
+.widget .widget-corpo{
+    padding: 1.2rem;
+}
+
+/* .widget.nwsletter - variação de widget */
+.widget .newsletter .widget-corpo p{
+    font-size: 0.86rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 1rem;
+    line-height: 1.65;
+}
+
+/* campo de email dentro do widget newsletter */
+.campo-email{
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border: 1.5px solid var(--cor-borda);
+    border-radius: 6px;
+    font-family: var(--fonte-corpo);
+    font-size: 0.85rem;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    margin-bottom: 0.7rem;
+    outline: none;
+    transition: backgruond-color var(--transicao);
+}
+
+.campo-email:focus{
+    border-color: var(--cor-acento);
+}
+
+/* botão dentro do widget newsletter */
+.btn-newsletter{
+    width: 100%;
+    background-color: var(--cor-topo);
+    color: #fff;
+    border: none;
+    padding: 0.68rem;
+    border-radius: 6px;
+    font-family: var(--fonte-corpo);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--transicao);
+}
+
+.btn-newsletter:hover{
+    background-color: var(--cor-acento);
+}
+
+/* .lista-categorias - lista dentro do widget */
+.lista-categorias{
+    display: flex;
+    flex-direction: column;
+}
+
+/* seletor descendente: links dentro  */
+.widget .lista-categorias li{
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.widget .lista-categorias li:last-child{
+    border-bottom: none;
+}
+
+.widget .lista-categorias li a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0;
+    font-size: 0.86rem;
+    color: var(--cor-texto);
+    transition: var(--transicao);
+}
+
+.widget .lista-categorias li a:hover{
+    color: var(--cor-acento);
+}
+
+/* .contagem - badge numérico dentro das categorias */
+.contagem{
+    font-family: var(--fonte-mono);
+    font-size: 0.68rem;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-suave);
+    padding: 0.1rem 0.5rem;
+    border-radius: 10px;
+}
+
+/* .nuvem-tags - container de tags populares */
+.nuvem-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* .tag-item - item clicável da nuvem */
+.tag-item{
+    font-family: var(--fonte-mono);
+    font-size: 0.7rem;
+    padding: 0.28rem 0.7rem;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-suave);
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all var(--transicao);
+}
+
+.tag-item:hover{
+    background-color: var(--cor-topo);
+    color: #fff;
+    border-color: var(--cor-topo);
+}
+
+/* .widget.destaque-lateral - variação de widget */
+.post-destaque{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+/* thubnail do post em destaque */
+.post-thumb{
+    height: 110px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--cor-topo), var(--cor-acento));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+}
+
+/* h3 dentro de .post-destaque */
+.post-destaque h3{
+    font-family: var(--fonte-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--cor-texto);
+}
+
+/* p dentro de .post-destaque */
+.post-destaque p{
+    font-size: 0.82rem;
+    color: var(--cor-texto-suave);
+    line-height: 1.65;
+}
+
+/* .btn-ver - botão de ação do destaque */
+.btn-ver{
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--cor-acento);
+    border: 1.5px solid var(--cor-acento);
+    padding: 0.38rem 0.9rem;
+    border-radius: 5px;
+    width: fit-content;
+    transition: all var(--transicao);
+}
+
+.btn-ver:hover{
+    background-color: var(--cor-acento);
+    color: #fff;
+}
+
+/* #faixa-numeros - seção de estatísticas */
+#faixa-numeros{
+    background-color: var(--cor-topo);
+    padding: 3.5rem 5vw;
+}
+
+/* .numeros-grid - layout interno dos números */
+.numeros-grid{
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* .numero-item - cada bloco de estatística */
+.numero-item{
+    text-align: center;
+    color: #fff;
+}
+
+/* .numero - valor grande e em destaque */
+.numero-item .numero{
+    font-family: var(--fonte-display);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-acento);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+/* .numero-label - texto descritivo abaixo do número */
+.numero-item .numero-label{
+    font-size: 0.78rem;
+    color: #7a8aa8;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+
+/* #rodape - rodapé completo */
+#rodape{
+    background-color: #0e1628;
+    color: #7a8aa8;
+    padding: 4rem 5vw 0;
+}
+
+/* .rodape-grid - layout interno do rodapé */
+.rodape-grid{
+    max-width: 1880px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* .rodape-col-logo - coluna com logo e descrição */
+.rodape-col-logo{
+    flex: 1.6;
+    min-width: 220px;
+}
+
+/* .logo-rodape - logo dentro do rodapé */
+.logo-rodape{
+    font-family: var(--fonte-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.9rem;
+}
+
+/* span dentro de .logo-rodape */
+.logo-rodape span{
+    color: var(--cor-acento);
+}
+
+/* p dentro de .rodape-col-logo */
+.rodape-col-logo{
+    font-size: 0.86rem;
+    line-height: 1.75;
+    color: #556070;
+}
+
+/* .rodape-col - colunas de link */
+.rodape-col{
+    flex: 1;
+    min-width: 140px;
+}
+
+/* h4 dentro de .rodape-col */
+.rodape-col h4{
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #fff;
+    margin-bottom: 1.3rem;
+}
+
+/* seletor descendente: links dentro das colunas do rodapé */
+#rodape .rodape-col ul{
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+#rodape .rodape-col ul li a{
+    font-size: 0.86rem;
+    color: #556070;
+    transition: color var(--transicao);
+}
+
+#rodape .rodape-col ul li a:hover{
+    color: var(--cor-acento);
+}
+
+/* #rodape-base - barra inferior do rodapé (id dentro de id) */
+#rodape-base{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1.3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* .copyright - texto de copyright */
+.copyright{
+    font-size: 0.78rem;
+    color: #3a4a5c;
+}
+
+/* .rede - grupo de links de redes sociais */
+.redes{
+    display: flex;
+    gap: 1.2rem;
+}
+
+/* seletor descendente: links dentro de .rede */
+#rodape-base .redes a{
+    font-family: var(--fonte-mono);
+    font-size: 0.7rem;
+    color: #3a4a5c;
+    letter-spacing: 0.06em;
+    transition: color var(--transicao);
+}
+
+#rodape-base .redes a:hover{
+    color: var(--cor-acento);
+}
